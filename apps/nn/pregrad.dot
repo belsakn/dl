@@ -1,0 +1,216 @@
+digraph fullGraph {
+	nodesep=1;
+	rankdir=TB;
+	ranksep="1.5 equally";
+	Node_0xc0000bb180:Node_0xc0000bb180:anchor->Node_0xc0000bafc0:Node_0xc0000bafc0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb180:Node_0xc0000bb180:anchor->Node_0xc0000baee0:Node_0xc0000baee0:anchor[ labelfloat=false, taillabel=" 1 " ];
+	Node_0xc0000bb260:Node_0xc0000bb260:anchor->Node_0xc0000bb180:Node_0xc0000bb180:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb340:Node_0xc0000bb340:anchor->Node_0xc0000bb260:Node_0xc0000bb260:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb420:Node_0xc0000bb420:anchor->Node_0xc0000bb0a0:Node_0xc0000bb0a0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb420:Node_0xc0000bb420:anchor->Node_0xc0000bb260:Node_0xc0000bb260:anchor[ labelfloat=false, taillabel=" 1 " ];
+	Node_0xc0000bb500:Node_0xc0000bb500:anchor->Node_0xc0000bb420:Node_0xc0000bb420:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb5e0:Node_0xc0000bb5e0:anchor->Node_0xc0000bb500:Node_0xc0000bb500:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb7a0:Node_0xc0000bb7a0:anchor->Node_0xc0000bb500:Node_0xc0000bb500:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb880:Node_0xc0000bb880:anchor->Node_0xc0000bb500:Node_0xc0000bb500:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb960:Node_0xc0000bb960:anchor->Node_0xc0000bb7a0:Node_0xc0000bb7a0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bb960:Node_0xc0000bb960:anchor->Node_0xc0000bb880:Node_0xc0000bb880:anchor[ labelfloat=false, taillabel=" 1 " ];
+	Node_0xc0000bba40:Node_0xc0000bba40:anchor->Node_0xc0000bb5e0:Node_0xc0000bb5e0:anchor[ labelfloat=false, taillabel=" 0 " ];
+	Node_0xc0000bba40:Node_0xc0000bba40:anchor->Node_0xc0000bb960:Node_0xc0000bb960:anchor[ labelfloat=false, taillabel=" 1 " ];
+	outsideRoot->insideInputs[ constraint=false, style=invis, weight=999 ];
+	outsideExprG->insideExprG[ constraint=false, style=invis, weight=999 ];
+	outsideRoot->outsideExprG[ constraint=false, style=invis, weight=999 ];
+	insideInputs->insideExprG[ constraint=false, style=invis, weight=999 ];
+	subgraph cluster_expressionGraph {
+	label=expressionGraph;
+	Node_0xc0000bb180 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>3</TD><TD>A × B(%1, %0) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>A × B :: Matrix a → Matrix a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(4, 1)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb260 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>4</TD><TD>sigmoid(%3) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>sigmoid :: a → a</TD></TR>
+<TR><TD>Shape</TD><TD>(4, 1)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb340 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#FF0000;"  BGCOLOR="lightblue">
+
+<TR><TD>5</TD><TD>read sigmoid(%3) :: Matrix float64 into 0xc00014ee60 :: NIL</TD></TR>
+
+
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb420 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>6</TD><TD>- false(%2, %4) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>- false :: Matrix a → Matrix a → Matrix a</TD></TR>
+<TR><TD>Shape</TD><TD>(4, 1)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb500 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>7</TD><TD>square(%6) :: Matrix float64</TD></TR>
+<TR><TD>Op</TD><TD>square :: a → a</TD></TR>
+<TR><TD>Shape</TD><TD>(4, 1)</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb5e0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>8</TD><TD>Σ[0 1](%7) :: float64</TD></TR>
+<TR><TD>Op</TD><TD>Σ[0 1] :: Tensor-0 a → a</TD></TR>
+<TR><TD>Shape</TD><TD>()</TD></TR>
+<TR><TD>Overwrites Input 0</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb7a0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>9</TD><TD>SizeOf=4(%7) :: float64</TD></TR>
+<TR><TD>Op</TD><TD>SizeOf=4 :: Matrix a → a</TD></TR>
+<TR><TD>Shape</TD><TD>()</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb880 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>a</TD><TD>SizeOf=1(%7) :: float64</TD></TR>
+<TR><TD>Op</TD><TD>SizeOf=1 :: Matrix a → a</TD></TR>
+<TR><TD>Shape</TD><TD>()</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb960 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor" >
+
+<TR><TD>b</TD><TD>⊙ false(%9, %a) :: float64</TD></TR>
+<TR><TD>Op</TD><TD>⊙ false :: a → a → a</TD></TR>
+<TR><TD>Shape</TD><TD>()</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bba40 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#FF0000;" >
+
+<TR><TD>c</TD><TD>÷ false(%8, %b) :: float64</TD></TR>
+<TR><TD>Op</TD><TD>÷ false :: a → a → a</TD></TR>
+<TR><TD>Shape</TD><TD>()</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>%!s(NIL)</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	insideExprG [ style=invis ];
+
+}
+;
+	subgraph inputConsts {
+	rank=max;
+	subgraph cluster_inputs {
+	label=inputs;
+	Node_0xc0000baee0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>0</TD><TD>w :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(3, 1)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Vector (3, 1) [1 1]<BR />C[-0.191    0.58   -1.37]</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bafc0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>1</TD><TD>X :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(4, 3)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Matrix (4, 3) [3 1]<BR />⎡  0    0    1⎤<BR />⎢  0    1    1⎥<BR />⎢  1    0    1⎥<BR />⎣  1    1    1⎦<BR /></TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	Node_0xc0000bb0a0 [ fontname=monospace, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" PORT="anchor"  COLOR="#00FF00;" BGCOLOR="lightyellow">
+
+<TR><TD>2</TD><TD>y :: Matrix float64</TD></TR>
+
+<TR><TD>Shape</TD><TD>(4, 1)</TD></TR>
+<TR><TD>Overwrites Input -1</TD><TD>Data On: CPU</TD></TR>
+
+<TR><TD>Value</TD><TD>Vector (4, 1) [1 1]<BR />C[  0    0    1    1]</TD></TR>
+
+
+</TABLE>
+>, shape=none ];
+	insideInputs [ style=invis ];
+
+}
+;
+
+}
+;
+	subgraph outsides {
+	outsideExprG [ style=invis ];
+	outsideRoot [ style=invis ];
+
+}
+;
+
+}
